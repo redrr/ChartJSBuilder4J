@@ -1,11 +1,8 @@
-import Elements.Data;
-import Elements.Options;
-
-import java.util.ArrayList;
+import elements.Data;
+import elements.Options;
 
 public class ChartBuilder {
 
-    String type;
-    Data data;
-    Options options;
+    private Data data;
+    private Options options;
 }
