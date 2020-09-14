@@ -1,4 +1,4 @@
-package elements;
+package common.types;
 
 import java.util.Objects;
 

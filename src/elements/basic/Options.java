@@ -1,4 +1,4 @@
-package elements;
+package elements.basic;
 
 public class Options {
 }
