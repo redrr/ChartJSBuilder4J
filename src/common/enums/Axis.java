@@ -1,6 +1,6 @@
 package common.enums;
 
-public enum AxisType {
+public enum Axis {
 
     X, Y
 }

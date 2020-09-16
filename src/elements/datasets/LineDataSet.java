@@ -1,34 +1,31 @@
 package elements.datasets;
 
+import common.enums.CubicInterpolationMode;
+import common.enums.Stepped;
+
 public class LineDataSet extends LineTypeDataSet {
 
-    private String cubicInterpolationMode;
-    private Boolean showLine, stepped;
+    private String xAxisID, yAxisID;
+    private CubicInterpolationMode cubicInterpolationMode;
+    private Stepped stepped;
 
-    public LineDataSet() {
+    //region[Region] Setters
+
+    public void setxAxisID(String xAxisID) {
+        this.xAxisID = xAxisID;
     }
 
-    public String getCubicInterpolationMode() {
-        return cubicInterpolationMode;
+    public void setyAxisID(String yAxisID) {
+        this.yAxisID = yAxisID;
     }
 
-    public void setCubicInterpolationMode(String cubicInterpolationMode) {
+    public void setCubicInterpolationMode(CubicInterpolationMode cubicInterpolationMode) {
         this.cubicInterpolationMode = cubicInterpolationMode;
     }
 
-    public Boolean getShowLine() {
-        return showLine;
-    }
-
-    public void setShowLine(Boolean showLine) {
-        this.showLine = showLine;
-    }
-
-    public Boolean getStepped() {
-        return stepped;
-    }
-
-    public void setStepped(Boolean stepped) {
+    public void setStepped(Stepped stepped) {
         this.stepped = stepped;
     }
+
+    //endregion
 }

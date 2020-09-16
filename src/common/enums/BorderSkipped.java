@@ -1,6 +1,6 @@
 package common.enums;
 
-public enum BorderSkippedType {
+public enum BorderSkipped {
 
     START, END, BOTTOM, LEFT, TOP, RIGHT, FALSE
 

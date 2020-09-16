@@ -1,77 +1,60 @@
 package elements.datasets;
 
-import common.enums.AxisType;
-import common.enums.BorderSkippedType;
+import common.enums.Axis;
+import common.enums.BorderSkipped;
 
 public class BarDataSet extends DataSet {
 
-    private String indexAxis;
-    private Object borderSkipped;
-    private Integer barPercentage, categoryPercentage, barThickness, maxBarThickness, minBarLength;
+    private String label, xAxisID, yAxisID;
+    private Axis indexAxis;
+    private BorderSkipped borderSkipped;
+    private Integer barPercentage, categoryPercentage, barThickness, maxBarThickness, minBarLength, order;
 
-    public BarDataSet() {
+    //region[Region] Setters
+
+    public void setLabel(String label) {
+        this.label = label;
     }
 
-    public Object getBorderSkipped() {
-        return borderSkipped;
+    public void setxAxisID(String xAxisID) {
+        this.xAxisID = xAxisID;
     }
 
-    public BarDataSet setBorderSkipped(BorderSkippedType borderSkipped) {
-        this.borderSkipped = borderSkipped.equals(BorderSkippedType.FALSE) ? false : borderSkipped.name().toLowerCase();
-        return this;
+    public void setyAxisID(String yAxisID) {
+        this.yAxisID = yAxisID;
     }
 
-    public String getIndexAxis() {
-        return indexAxis;
+    public void setIndexAxis(Axis indexAxis) {
+        this.indexAxis = indexAxis;
     }
 
-    public BarDataSet setIndexAxis(AxisType indexAxis) {
-        this.indexAxis = indexAxis.name().toLowerCase();
-        return this;
+    public void setBorderSkipped(BorderSkipped borderSkipped) {
+        this.borderSkipped = borderSkipped;
     }
 
-    public Integer getBarPercentage() {
-        return barPercentage;
-    }
-
-    public BarDataSet setBarPercentage(Integer barPercentage) {
+    public void setBarPercentage(Integer barPercentage) {
         this.barPercentage = barPercentage;
-        return this;
     }
 
-    public Integer getCategoryPercentage() {
-        return categoryPercentage;
-    }
-
-    public BarDataSet setCategoryPercentage(Integer categoryPercentage) {
+    public void setCategoryPercentage(Integer categoryPercentage) {
         this.categoryPercentage = categoryPercentage;
-        return this;
     }
 
-    public Integer getBarThickness() {
-        return barThickness;
-    }
-
-    public BarDataSet setBarThickness(Integer barThickness) {
+    public void setBarThickness(Integer barThickness) {
         this.barThickness = barThickness;
-        return this;
     }
 
-    public Integer getMaxBarThickness() {
-        return maxBarThickness;
-    }
-
-    public BarDataSet setMaxBarThickness(Integer maxBarThickness) {
+    public void setMaxBarThickness(Integer maxBarThickness) {
         this.maxBarThickness = maxBarThickness;
-        return this;
     }
 
-    public Integer getMinBarLength() {
-        return minBarLength;
-    }
-
-    public BarDataSet setMinBarLength(Integer minBarLength) {
+    public void setMinBarLength(Integer minBarLength) {
         this.minBarLength = minBarLength;
-        return this;
     }
+
+    public void setOrder(Integer order) {
+        this.order = order;
+    }
+
+    //endregion
 }
