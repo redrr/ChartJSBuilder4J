@@ -16,4 +16,9 @@ public class RadarChartBuilder extends ChartBuilder {
     public void setData(Data<RadarDataSet> data) {
         this.data = data;
     }
+
+    @Override
+    public String build() {
+        return null;
+    }
 }

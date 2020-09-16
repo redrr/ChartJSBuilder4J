@@ -15,4 +15,9 @@ public class LineChartBuilder extends ChartBuilder {
     public void setData(Data<LineDataSet> data) {
         this.data = data;
     }
+
+    @Override
+    public String build() {
+        return null;
+    }
 }

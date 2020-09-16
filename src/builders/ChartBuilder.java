@@ -5,16 +5,16 @@ import elements.basic.Data;
 import elements.basic.Options;
 import elements.datasets.DataSet;
 
-public abstract class ChartBuilder {
+abstract class ChartBuilder implements IBuilder {
 
     private ChartType type;
     private Options options;
 
-    protected void setType(ChartType type) {
+    void setType(ChartType type) {
         this.type = type;
     }
 
-    public void setOptions(Options options) {
+    void setOptions(Options options) {
         this.options = options;
     }
 }

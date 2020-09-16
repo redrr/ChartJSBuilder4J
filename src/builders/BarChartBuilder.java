@@ -16,4 +16,9 @@ public class BarChartBuilder extends ChartBuilder {
     public void setData(Data<BarDataSet> data) {
         this.data = data;
     }
+
+    @Override
+    public String build() {
+        return null;
+    }
 }
