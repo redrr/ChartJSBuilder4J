@@ -28,14 +28,14 @@ public class PolarAreaChartBuilder extends ChartBuilder {
         JsonObject dataObject = new JsonObject();
         JsonArray labels = new JsonArray();
         data.getLabels().forEach(labels::put);
-        dataObject.put(Constants.labels, labels.toString());
+        dataObject.put(Constants.labels, labels);
         JsonArray dataSets = new JsonArray();
         data.getDatasets().forEach(d -> {
             JsonObject dataSet = new JsonObject();
             if (d.getData().length > 0) {
                 JsonArray data = new JsonArray();
                 Arrays.asList(d.getData()).forEach(data::put);
-                dataSet.put(Constants.data, data.toString());
+                dataSet.put(Constants.data, data);
             }
             dataSet.put(Constants.backgroundColor, d.getBackgroundColor())
                     .put(Constants.borderColor, d.getHoverBackgroundColor())

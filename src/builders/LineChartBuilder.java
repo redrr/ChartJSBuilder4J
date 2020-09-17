@@ -27,14 +27,14 @@ public class LineChartBuilder extends ChartBuilder {
         JsonObject dataObject = new JsonObject();
         JsonArray labels = new JsonArray();
         data.getLabels().forEach(labels::put);
-        dataObject.put(Constants.labels, labels.toString());
+        dataObject.put(Constants.labels, labels);
         JsonArray dataSets = new JsonArray();
         data.getDatasets().forEach(lineDataSet -> {
             JsonObject dataSet = new JsonObject();
             if(lineDataSet.getData().length > 0) {
                 JsonArray data = new JsonArray();
                 Arrays.asList(lineDataSet.getData()).forEach(data::put);
-                dataSet.put(Constants.data, data.toString());
+                dataSet.put(Constants.data, data);
             }
             dataSet.put(Constants.backgroundColor, lineDataSet.getBackgroundColor())
                     .put(Constants.borderColor, lineDataSet.getHoverBackgroundColor())
@@ -72,13 +72,14 @@ public class LineChartBuilder extends ChartBuilder {
                     .put(Constants.cubicInterpolationMode, lineDataSet.getCubicInterpolationMode())
                     .put(Constants.xAxisID, lineDataSet.getxAxisID())
                     .put(Constants.yAxisID, lineDataSet.getyAxisID());
-            dataSets.put(dataSet);
+            dataSets.put(dataSet.tostring());
         });
+        dataObject.put(Constants.datasets, dataSets);
         JsonObject optionObject = new JsonObject();
         //TODO: Options implementation
         config.put(Constants.type, getType().name())
                 .put(Constants.data, dataObject)
                 .put(Constants.options, optionObject);
-        return config.toString();
+        return config.tostring();
     }
 }

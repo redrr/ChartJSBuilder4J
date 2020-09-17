@@ -1,5 +1,7 @@
 import builders.LineChartBuilder;
 import common.parser.JsonObject;
+import elements.basic.Data;
+import elements.datasets.LineDataSet;
 
 public class TestBuilder {
 
@@ -9,10 +11,10 @@ public class TestBuilder {
 
     private static String createLineChart() {
         LineChartBuilder lineChartBuilder = new LineChartBuilder();
-        JsonObject object = new JsonObject();
-        object.put("asd", "asd");
-        object.put("asd1", "asd");
-        object.put("asd2", "asd");
-        return object.toString();
+        Data<LineDataSet> data = new Data<>();
+        data.addLabel("test1");
+        data.addLabel("test2");
+        lineChartBuilder.setData(data);
+        return lineChartBuilder.build();
     }
 }
