@@ -17,4 +17,12 @@ abstract class ChartBuilder implements IBuilder {
     void setOptions(Options options) {
         this.options = options;
     }
+
+    ChartType getType() {
+        return type;
+    }
+
+    Options getOptions() {
+        return options;
+    }
 }
