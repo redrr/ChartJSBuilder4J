@@ -44,4 +44,41 @@ public abstract class DataSet {
     }
 
     //endregion
+
+    //region [Region] Getters
+
+    public Color getBackgroundColor() {
+        return backgroundColor;
+    }
+
+    public Color getBorderColor() {
+        return borderColor;
+    }
+
+    public Color getHoverBackgroundColor() {
+        return hoverBackgroundColor;
+    }
+
+    public Color getHoverBorderColor() {
+        return hoverBorderColor;
+    }
+
+    public Integer getBorderWidth() {
+        return borderWidth;
+    }
+
+    public Integer getHoverBorderWidth() {
+        return hoverBorderWidth;
+    }
+
+    public Object getClip() {
+        return clip;
+    }
+
+    public Object[] getData() {
+        return data;
+    }
+
+
+    //endregion
 }

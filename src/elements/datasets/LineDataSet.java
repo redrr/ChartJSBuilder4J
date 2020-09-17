@@ -28,4 +28,25 @@ public class LineDataSet extends LineTypeDataSet {
     }
 
     //endregion
+
+    //region [Region] Getters
+
+    public String getxAxisID() {
+        return xAxisID;
+    }
+
+    public String getyAxisID() {
+        return yAxisID;
+    }
+
+    public CubicInterpolationMode getCubicInterpolationMode() {
+        return cubicInterpolationMode;
+    }
+
+    public Stepped getStepped() {
+        return stepped;
+    }
+
+
+    //endregion
 }

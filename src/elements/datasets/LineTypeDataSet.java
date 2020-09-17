@@ -12,7 +12,8 @@ public abstract class LineTypeDataSet extends DataSet {
     private BorderCapStyle borderCapStyle, hoverBorderCapStyle;
     private PointStyle pointStyle;
     private Integer[] borderDash, hoverBorderDash;
-    private Integer borderDashOffset, hoverBorderDashOffset, lineTension, pointBorderWidth, pointHoverBorderWidth, pointHitRadius, pointRadius, pointHoverRadius, pointRotation, order;
+    private Integer borderDashOffset, hoverBorderDashOffset, lineTension, pointBorderWidth,
+            pointHoverBorderWidth, pointHitRadius, pointRadius, pointHoverRadius, pointRotation, order;
     private Boolean fill, spanGaps, showLine;
     private Color pointBackgroundColor, pointBorderColor, pointHoverBackgroundColor, pointHoverBorderColor;
 
@@ -117,6 +118,111 @@ public abstract class LineTypeDataSet extends DataSet {
     public void setPointHoverBorderColor(Color pointHoverBorderColor) {
         this.pointHoverBorderColor = pointHoverBorderColor;
     }
+
+    //endregion
+
+    //region [Region] Getters
+
+    public String getLabel() {
+        return label;
+    }
+
+    public BorderJoinStyle getBorderJoinStyle() {
+        return borderJoinStyle;
+    }
+
+    public BorderJoinStyle getHoverBorderJoinStyle() {
+        return hoverBorderJoinStyle;
+    }
+
+    public BorderCapStyle getBorderCapStyle() {
+        return borderCapStyle;
+    }
+
+    public BorderCapStyle getHoverBorderCapStyle() {
+        return hoverBorderCapStyle;
+    }
+
+    public PointStyle getPointStyle() {
+        return pointStyle;
+    }
+
+    public Integer[] getBorderDash() {
+        return borderDash;
+    }
+
+    public Integer[] getHoverBorderDash() {
+        return hoverBorderDash;
+    }
+
+    public Integer getBorderDashOffset() {
+        return borderDashOffset;
+    }
+
+    public Integer getHoverBorderDashOffset() {
+        return hoverBorderDashOffset;
+    }
+
+    public Integer getLineTension() {
+        return lineTension;
+    }
+
+    public Integer getPointBorderWidth() {
+        return pointBorderWidth;
+    }
+
+    public Integer getPointHoverBorderWidth() {
+        return pointHoverBorderWidth;
+    }
+
+    public Integer getPointHitRadius() {
+        return pointHitRadius;
+    }
+
+    public Integer getPointRadius() {
+        return pointRadius;
+    }
+
+    public Integer getPointHoverRadius() {
+        return pointHoverRadius;
+    }
+
+    public Integer getPointRotation() {
+        return pointRotation;
+    }
+
+    public Integer getOrder() {
+        return order;
+    }
+
+    public Boolean getFill() {
+        return fill;
+    }
+
+    public Boolean getSpanGaps() {
+        return spanGaps;
+    }
+
+    public Boolean getShowLine() {
+        return showLine;
+    }
+
+    public Color getPointBackgroundColor() {
+        return pointBackgroundColor;
+    }
+
+    public Color getPointBorderColor() {
+        return pointBorderColor;
+    }
+
+    public Color getPointHoverBackgroundColor() {
+        return pointHoverBackgroundColor;
+    }
+
+    public Color getPointHoverBorderColor() {
+        return pointHoverBorderColor;
+    }
+
 
     //endregion
 }

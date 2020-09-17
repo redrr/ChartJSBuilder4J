@@ -10,7 +10,7 @@ public class Data<T extends DataSet> {
     private List<String> labels = new ArrayList<>();
     private List<T> datasets = new ArrayList<>();
 
-    private Data() {}
+    public Data() {}
 
     public Data<T> addDataset(T dataset) {
         this.datasets.add(dataset);
@@ -20,5 +20,13 @@ public class Data<T extends DataSet> {
     public Data<T> addLabel(String label) {
         this.labels.add(label);
         return this;
+    }
+
+    public List<String> getLabels() {
+        return new ArrayList<>(labels);
+    }
+
+    public List<T> getDatasets() {
+        return new ArrayList<>(datasets);
     }
 }
