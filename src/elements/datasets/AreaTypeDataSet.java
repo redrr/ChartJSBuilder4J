@@ -13,4 +13,13 @@ public abstract class AreaTypeDataSet extends DataSet {
     }
 
     //endregion
+
+    //region [Region] Getters
+
+    public BorderAlign getBorderAlign() {
+        return borderAlign;
+    }
+
+
+    //endregion
 }

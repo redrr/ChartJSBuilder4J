@@ -39,4 +39,37 @@ public class BubbleDataSet extends DataSet {
     }
 
     //endregion
+
+    //region [Region] Getters
+
+     public String getLabel() {
+        return label;
+    }
+
+    public PointStyle getPointStyle() {
+        return pointStyle;
+    }
+
+    public Integer getOrder() {
+        return order;
+    }
+
+    public Integer getHoverRadius() {
+        return hoverRadius;
+    }
+
+    public Integer getHitRadius() {
+        return hitRadius;
+    }
+
+    public Integer getRotation() {
+        return rotation;
+    }
+
+    public Integer getRadius() {
+        return radius;
+    }
+
+
+    //endregion
 }

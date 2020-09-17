@@ -57,4 +57,53 @@ public class BarDataSet extends DataSet {
     }
 
     //endregion
+
+    //region [Region] Getters
+
+    public String getLabel() {
+        return label;
+    }
+
+    public String getxAxisID() {
+        return xAxisID;
+    }
+
+    public String getyAxisID() {
+        return yAxisID;
+    }
+
+    public Axis getIndexAxis() {
+        return indexAxis;
+    }
+
+    public BorderSkipped getBorderSkipped() {
+        return borderSkipped;
+    }
+
+    public Integer getBarPercentage() {
+        return barPercentage;
+    }
+
+    public Integer getCategoryPercentage() {
+        return categoryPercentage;
+    }
+
+    public Integer getBarThickness() {
+        return barThickness;
+    }
+
+    public Integer getMaxBarThickness() {
+        return maxBarThickness;
+    }
+
+    public Integer getMinBarLength() {
+        return minBarLength;
+    }
+
+    public Integer getOrder() {
+        return order;
+    }
+
+
+    //endregion
 }

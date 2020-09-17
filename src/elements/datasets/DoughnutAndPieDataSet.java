@@ -19,4 +19,21 @@ public class DoughnutAndPieDataSet extends AreaTypeDataSet {
     }
 
     //endregion
+
+    //region [Region] Getters
+
+    public Integer getHoverOffset() {
+        return hoverOffset;
+    }
+
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public Integer getWeight() {
+        return weight;
+    }
+
+
+    //endregion
 }

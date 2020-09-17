@@ -60,4 +60,39 @@ public class Constants {
     public static final String stepped = "stepped";
 
     //endregion
+
+    //region [Region] Fields from BarDataSet.java
+
+    public static final String indexAxis = "indexAxis";
+    public static final String borderSkipped = "borderSkipped";
+    public static final String barPercentage = "barPercentage";
+    public static final String categoryPercentage = "categoryPercentage";
+    public static final String barThickness = "barThickness";
+    public static final String maxBarThickness = "maxBarThickness";
+    public static final String minBarLength = "minBarLength";
+
+    //endregion
+
+    //region [Region] Fields from BubbleDataSet.java
+
+    public static final String hoverRadius = "hoverRadius";
+    public static final String hitRadius = "hitRadius";
+    public static final String rotation = "rotation";
+    public static final String radius = "radius";
+
+    //endregion
+
+    //region [Region] Fields from AreaTypeDataSet.java
+
+    public static final String borderAlign = "borderAlign";
+
+    //endregion
+
+    //region [Region] Fields from DoughnutAndPieDataSet.java
+
+    public static final String hoverOffset = "hoverOffset";
+    public static final String offset = "offset";
+    public static final String weight = "weight";
+
+    //endregion
 }

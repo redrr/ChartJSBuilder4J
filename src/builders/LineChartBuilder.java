@@ -24,62 +24,61 @@ public class LineChartBuilder extends ChartBuilder {
     @Override
     public String build() {
         JsonObject config = new JsonObject();
-        config.put(Constants.type, getType().name());
         JsonObject dataObject = new JsonObject();
         JsonArray labels = new JsonArray();
         data.getLabels().forEach(labels::put);
         dataObject.put(Constants.labels, labels.toString());
         JsonArray dataSets = new JsonArray();
-        data.getDatasets().forEach(d -> {
+        data.getDatasets().forEach(lineDataSet -> {
             JsonObject dataSet = new JsonObject();
-            //From DataSet class
-            dataSet.put(Constants.backgroundColor, d.getBackgroundColor());
-            dataSet.put(Constants.borderColor, d.getHoverBackgroundColor());
-            dataSet.put(Constants.hoverBackgroundColor, d.getBorderColor());
-            dataSet.put(Constants.hoverBorderColor, d.getHoverBorderColor());
-            dataSet.put(Constants.borderWidth, d.getBorderWidth());
-            dataSet.put(Constants.hoverBorderWidth, d.getHoverBorderWidth());
-            dataSet.put(Constants.clip, d.getClip());
-            if(d.getData().length > 0) {
+            if(lineDataSet.getData().length > 0) {
                 JsonArray data = new JsonArray();
-                Arrays.asList(d.getData()).forEach(data::put);
+                Arrays.asList(lineDataSet.getData()).forEach(data::put);
                 dataSet.put(Constants.data, data.toString());
             }
-            //From LineTypeDataSet class
-            dataSet.put(Constants.label, d.getLabel());
-            dataSet.put(Constants.borderJoinStyle, d.getBorderJoinStyle());
-            dataSet.put(Constants.hoverBorderJoinStyle, d.getHoverBorderJoinStyle());
-            dataSet.put(Constants.borderCapStyle, d.getBorderCapStyle());
-            dataSet.put(Constants.hoverBorderCapStyle, d.getHoverBorderCapStyle());
-            dataSet.put(Constants.pointStyle, d.getPointStyle());
-            dataSet.put(Constants.borderDashOffset, d.getBorderDashOffset());
-            dataSet.put(Constants.hoverBorderDashOffset, d.getHoverBorderDashOffset());
-            dataSet.put(Constants.lineTension, d.getLineTension());
-            dataSet.put(Constants.pointBorderWidth, d.getPointBorderWidth());
-            dataSet.put(Constants.pointHoverBorderWidth, d.getPointHoverBorderWidth());
-            dataSet.put(Constants.pointHitRadius, d.getPointHitRadius());
-            dataSet.put(Constants.pointRadius, d.getPointRadius());
-            dataSet.put(Constants.pointHoverRadius, d.getPointHoverRadius());
-            dataSet.put(Constants.pointRotation, d.getPointRotation());
-            dataSet.put(Constants.order, d.getOrder());
-            dataSet.put(Constants.fill, d.getFill());
-            dataSet.put(Constants.spanGaps, d.getSpanGaps());
-            dataSet.put(Constants.showLine, d.getShowLine());
-            dataSet.put(Constants.pointBackgroundColor, d.getPointBackgroundColor());
-            dataSet.put(Constants.pointBorderColor, d.getPointBorderColor());
-            dataSet.put(Constants.pointHoverBackgroundColor, d.getPointHoverBackgroundColor());
-            dataSet.put(Constants.pointHoverBorderColor, d.getPointHoverBorderColor());
-            //From LineDataSet class
-            dataSet.put(Constants.stepped, d.getStepped());
-            dataSet.put(Constants.cubicInterpolationMode, d.getCubicInterpolationMode());
-            dataSet.put(Constants.xAxisID, d.getxAxisID());
-            dataSet.put(Constants.yAxisID, d.getyAxisID());
+            dataSet.put(Constants.backgroundColor, lineDataSet.getBackgroundColor())
+                    .put(Constants.borderColor, lineDataSet.getHoverBackgroundColor())
+                    .put(Constants.hoverBackgroundColor, lineDataSet.getBorderColor())
+                    .put(Constants.hoverBorderColor, lineDataSet.getHoverBorderColor())
+                    .put(Constants.borderWidth, lineDataSet.getBorderWidth())
+                    .put(Constants.hoverBorderWidth, lineDataSet.getHoverBorderWidth())
+                    .put(Constants.clip, lineDataSet.getClip())
+                    .put(Constants.label, lineDataSet.getLabel())
+                    .put(Constants.borderJoinStyle, lineDataSet.getBorderJoinStyle())
+                    .put(Constants.hoverBorderJoinStyle, lineDataSet.getHoverBorderJoinStyle())
+                    .put(Constants.borderCapStyle, lineDataSet.getBorderCapStyle())
+                    .put(Constants.hoverBorderCapStyle, lineDataSet.getHoverBorderCapStyle())
+                    .put(Constants.pointStyle, lineDataSet.getPointStyle())
+                    .put(Constants.borderDash, lineDataSet.getBorderDash())
+                    .put(Constants.hoverBorderDash, lineDataSet.getHoverBorderDash())
+                    .put(Constants.borderDashOffset, lineDataSet.getBorderDashOffset())
+                    .put(Constants.hoverBorderDashOffset, lineDataSet.getHoverBorderDashOffset())
+                    .put(Constants.lineTension, lineDataSet.getLineTension())
+                    .put(Constants.pointBorderWidth, lineDataSet.getPointBorderWidth())
+                    .put(Constants.pointHoverBorderWidth, lineDataSet.getPointHoverBorderWidth())
+                    .put(Constants.pointHitRadius, lineDataSet.getPointHitRadius())
+                    .put(Constants.pointRadius, lineDataSet.getPointRadius())
+                    .put(Constants.pointHoverRadius, lineDataSet.getPointHoverRadius())
+                    .put(Constants.pointRotation, lineDataSet.getPointRotation())
+                    .put(Constants.order, lineDataSet.getOrder())
+                    .put(Constants.fill, lineDataSet.getFill())
+                    .put(Constants.spanGaps, lineDataSet.getSpanGaps())
+                    .put(Constants.showLine, lineDataSet.getShowLine())
+                    .put(Constants.pointBackgroundColor, lineDataSet.getPointBackgroundColor())
+                    .put(Constants.pointBorderColor, lineDataSet.getPointBorderColor())
+                    .put(Constants.pointHoverBackgroundColor, lineDataSet.getPointHoverBackgroundColor())
+                    .put(Constants.pointHoverBorderColor, lineDataSet.getPointHoverBorderColor())
+                    .put(Constants.stepped, lineDataSet.getStepped())
+                    .put(Constants.cubicInterpolationMode, lineDataSet.getCubicInterpolationMode())
+                    .put(Constants.xAxisID, lineDataSet.getxAxisID())
+                    .put(Constants.yAxisID, lineDataSet.getyAxisID());
             dataSets.put(dataSet);
         });
-        config.put(Constants.data, dataObject.toString());
         JsonObject optionObject = new JsonObject();
         //TODO: Options implementation
-        config.put(Constants.options, optionObject.toString());
+        config.put(Constants.type, getType().name())
+                .put(Constants.data, dataObject)
+                .put(Constants.options, optionObject);
         return config.toString();
     }
 }
