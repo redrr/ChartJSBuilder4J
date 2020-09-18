@@ -4,6 +4,7 @@ import builders.common.Constants;
 import builders.common.enums.ChartType;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class LineChartBuilder extends ChartBuilder {
 
@@ -74,8 +75,9 @@ public class LineChartBuilder extends ChartBuilder {
         JsonObject optionObject = new JsonObject();
         //TODO: Options implementation
         config.put(Constants.type, getType().name())
-                .put(Constants.data, dataObject)
-                .put(Constants.options, optionObject);
+                .put(Constants.data, dataObject);
+        if(Objects.nonNull(optionObject))
+            config.put(Constants.options, optionObject);
         return config.convertJsonString();
     }
 }
