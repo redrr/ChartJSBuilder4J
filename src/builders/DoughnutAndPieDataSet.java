@@ -1,4 +1,4 @@
-package elements.datasets;
+package builders;
 
 public class DoughnutAndPieDataSet extends AreaTypeDataSet {
 
@@ -22,18 +22,17 @@ public class DoughnutAndPieDataSet extends AreaTypeDataSet {
 
     //region [Region] Getters
 
-    public Integer getHoverOffset() {
+    Integer getHoverOffset() {
         return hoverOffset;
     }
 
-    public Integer getOffset() {
+    Integer getOffset() {
         return offset;
     }
 
-    public Integer getWeight() {
+    Integer getWeight() {
         return weight;
     }
-
 
     //endregion
 }

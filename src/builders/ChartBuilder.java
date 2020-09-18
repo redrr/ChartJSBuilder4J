@@ -1,9 +1,6 @@
 package builders;
 
-import common.enums.ChartType;
-import elements.basic.Data;
-import elements.basic.Options;
-import elements.datasets.DataSet;
+import builders.common.enums.ChartType;
 
 abstract class ChartBuilder implements IBuilder {
 

@@ -1,9 +1,8 @@
-package elements.datasets;
+package builders;
 
-import common.enums.BorderCapStyle;
-import common.enums.BorderJoinStyle;
-import common.enums.PointStyle;
-import common.types.Color;
+import builders.common.enums.BorderCapStyle;
+import builders.common.enums.BorderJoinStyle;
+import builders.common.enums.PointStyle;
 
 public abstract class LineTypeDataSet extends DataSet {
 
@@ -123,106 +122,105 @@ public abstract class LineTypeDataSet extends DataSet {
 
     //region [Region] Getters
 
-    public String getLabel() {
+    String getLabel() {
         return label;
     }
 
-    public BorderJoinStyle getBorderJoinStyle() {
+    BorderJoinStyle getBorderJoinStyle() {
         return borderJoinStyle;
     }
 
-    public BorderJoinStyle getHoverBorderJoinStyle() {
+    BorderJoinStyle getHoverBorderJoinStyle() {
         return hoverBorderJoinStyle;
     }
 
-    public BorderCapStyle getBorderCapStyle() {
+    BorderCapStyle getBorderCapStyle() {
         return borderCapStyle;
     }
 
-    public BorderCapStyle getHoverBorderCapStyle() {
+    BorderCapStyle getHoverBorderCapStyle() {
         return hoverBorderCapStyle;
     }
 
-    public PointStyle getPointStyle() {
+    PointStyle getPointStyle() {
         return pointStyle;
     }
 
-    public Integer[] getBorderDash() {
+    Integer[] getBorderDash() {
         return borderDash;
     }
 
-    public Integer[] getHoverBorderDash() {
+    Integer[] getHoverBorderDash() {
         return hoverBorderDash;
     }
 
-    public Integer getBorderDashOffset() {
+    Integer getBorderDashOffset() {
         return borderDashOffset;
     }
 
-    public Integer getHoverBorderDashOffset() {
+    Integer getHoverBorderDashOffset() {
         return hoverBorderDashOffset;
     }
 
-    public Integer getLineTension() {
+    Integer getLineTension() {
         return lineTension;
     }
 
-    public Integer getPointBorderWidth() {
+    Integer getPointBorderWidth() {
         return pointBorderWidth;
     }
 
-    public Integer getPointHoverBorderWidth() {
+    Integer getPointHoverBorderWidth() {
         return pointHoverBorderWidth;
     }
 
-    public Integer getPointHitRadius() {
+    Integer getPointHitRadius() {
         return pointHitRadius;
     }
 
-    public Integer getPointRadius() {
+    Integer getPointRadius() {
         return pointRadius;
     }
 
-    public Integer getPointHoverRadius() {
+    Integer getPointHoverRadius() {
         return pointHoverRadius;
     }
 
-    public Integer getPointRotation() {
+    Integer getPointRotation() {
         return pointRotation;
     }
 
-    public Integer getOrder() {
+    Integer getOrder() {
         return order;
     }
 
-    public Boolean getFill() {
+    Boolean getFill() {
         return fill;
     }
 
-    public Boolean getSpanGaps() {
+    Boolean getSpanGaps() {
         return spanGaps;
     }
 
-    public Boolean getShowLine() {
+    Boolean getShowLine() {
         return showLine;
     }
 
-    public Color getPointBackgroundColor() {
+    Color getPointBackgroundColor() {
         return pointBackgroundColor;
     }
 
-    public Color getPointBorderColor() {
+    Color getPointBorderColor() {
         return pointBorderColor;
     }
 
-    public Color getPointHoverBackgroundColor() {
+    Color getPointHoverBackgroundColor() {
         return pointHoverBackgroundColor;
     }
 
-    public Color getPointHoverBorderColor() {
+    Color getPointHoverBorderColor() {
         return pointHoverBorderColor;
     }
-
 
     //endregion
 }

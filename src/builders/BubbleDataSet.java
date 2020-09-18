@@ -1,6 +1,6 @@
-package elements.datasets;
+package builders;
 
-import common.enums.PointStyle;
+import builders.common.enums.PointStyle;
 
 public class BubbleDataSet extends DataSet {
 
@@ -42,31 +42,31 @@ public class BubbleDataSet extends DataSet {
 
     //region [Region] Getters
 
-     public String getLabel() {
+    String getLabel() {
         return label;
     }
 
-    public PointStyle getPointStyle() {
+    PointStyle getPointStyle() {
         return pointStyle;
     }
 
-    public Integer getOrder() {
+    Integer getOrder() {
         return order;
     }
 
-    public Integer getHoverRadius() {
+    Integer getHoverRadius() {
         return hoverRadius;
     }
 
-    public Integer getHitRadius() {
+    Integer getHitRadius() {
         return hitRadius;
     }
 
-    public Integer getRotation() {
+    Integer getRotation() {
         return rotation;
     }
 
-    public Integer getRadius() {
+    Integer getRadius() {
         return radius;
     }
 

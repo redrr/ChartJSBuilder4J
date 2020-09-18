@@ -1,6 +1,4 @@
-package elements.basic;
-
-import elements.datasets.DataSet;
+package builders;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,16 +15,15 @@ public class Data<T extends DataSet> {
         return this;
     }
 
-    public Data<T> addLabel(String label) {
+    public void addLabel(String label) {
         this.labels.add(label);
-        return this;
     }
 
-    public List<String> getLabels() {
+    List<String> getLabels() {
         return new ArrayList<>(labels);
     }
 
-    public List<T> getDatasets() {
+    List<T> getDatasets() {
         return new ArrayList<>(datasets);
     }
 }

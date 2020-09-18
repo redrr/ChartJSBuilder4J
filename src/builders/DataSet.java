@@ -1,6 +1,4 @@
-package elements.datasets;
-
-import common.types.Color;
+package builders;
 
 public abstract class DataSet {
 
@@ -47,35 +45,35 @@ public abstract class DataSet {
 
     //region [Region] Getters
 
-    public Color getBackgroundColor() {
+    Color getBackgroundColor() {
         return backgroundColor;
     }
 
-    public Color getBorderColor() {
+    Color getBorderColor() {
         return borderColor;
     }
 
-    public Color getHoverBackgroundColor() {
+    Color getHoverBackgroundColor() {
         return hoverBackgroundColor;
     }
 
-    public Color getHoverBorderColor() {
+    Color getHoverBorderColor() {
         return hoverBorderColor;
     }
 
-    public Integer getBorderWidth() {
+    Integer getBorderWidth() {
         return borderWidth;
     }
 
-    public Integer getHoverBorderWidth() {
+    Integer getHoverBorderWidth() {
         return hoverBorderWidth;
     }
 
-    public Object getClip() {
+    Object getClip() {
         return clip;
     }
 
-    public Object[] getData() {
+    Object[] getData() {
         return data;
     }
 

@@ -1,4 +1,4 @@
-package common.enums;
+package builders.common.enums;
 
 public enum BorderSkipped {
 

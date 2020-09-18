@@ -1,11 +1,7 @@
 package builders;
 
-import common.Constants;
-import common.enums.ChartType;
-import common.parser.JsonArray;
-import common.parser.JsonObject;
-import elements.basic.Data;
-import elements.datasets.LineDataSet;
+import builders.common.Constants;
+import builders.common.enums.ChartType;
 
 import java.util.Arrays;
 
@@ -37,8 +33,8 @@ public class LineChartBuilder extends ChartBuilder {
                 dataSet.put(Constants.data, data);
             }
             dataSet.put(Constants.backgroundColor, lineDataSet.getBackgroundColor())
-                    .put(Constants.borderColor, lineDataSet.getHoverBackgroundColor())
-                    .put(Constants.hoverBackgroundColor, lineDataSet.getBorderColor())
+                    .put(Constants.hoverBackgroundColor, lineDataSet.getHoverBackgroundColor())
+                    .put(Constants.borderColor, lineDataSet.getBorderColor())
                     .put(Constants.hoverBorderColor, lineDataSet.getHoverBorderColor())
                     .put(Constants.borderWidth, lineDataSet.getBorderWidth())
                     .put(Constants.hoverBorderWidth, lineDataSet.getHoverBorderWidth())
@@ -72,7 +68,7 @@ public class LineChartBuilder extends ChartBuilder {
                     .put(Constants.cubicInterpolationMode, lineDataSet.getCubicInterpolationMode())
                     .put(Constants.xAxisID, lineDataSet.getxAxisID())
                     .put(Constants.yAxisID, lineDataSet.getyAxisID());
-            dataSets.put(dataSet.tostring());
+            dataSets.put(dataSet.convertJsonString());
         });
         dataObject.put(Constants.datasets, dataSets);
         JsonObject optionObject = new JsonObject();
@@ -80,6 +76,6 @@ public class LineChartBuilder extends ChartBuilder {
         config.put(Constants.type, getType().name())
                 .put(Constants.data, dataObject)
                 .put(Constants.options, optionObject);
-        return config.tostring();
+        return config.convertJsonString();
     }
 }

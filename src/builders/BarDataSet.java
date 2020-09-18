@@ -1,7 +1,7 @@
-package elements.datasets;
+package builders;
 
-import common.enums.Axis;
-import common.enums.BorderSkipped;
+import builders.common.enums.Axis;
+import builders.common.enums.BorderSkipped;
 
 public class BarDataSet extends DataSet {
 
@@ -60,47 +60,47 @@ public class BarDataSet extends DataSet {
 
     //region [Region] Getters
 
-    public String getLabel() {
+    String getLabel() {
         return label;
     }
 
-    public String getxAxisID() {
+    String getxAxisID() {
         return xAxisID;
     }
 
-    public String getyAxisID() {
+    String getyAxisID() {
         return yAxisID;
     }
 
-    public Axis getIndexAxis() {
+    Axis getIndexAxis() {
         return indexAxis;
     }
 
-    public BorderSkipped getBorderSkipped() {
+    BorderSkipped getBorderSkipped() {
         return borderSkipped;
     }
 
-    public Integer getBarPercentage() {
+    Integer getBarPercentage() {
         return barPercentage;
     }
 
-    public Integer getCategoryPercentage() {
+    Integer getCategoryPercentage() {
         return categoryPercentage;
     }
 
-    public Integer getBarThickness() {
+    Integer getBarThickness() {
         return barThickness;
     }
 
-    public Integer getMaxBarThickness() {
+    Integer getMaxBarThickness() {
         return maxBarThickness;
     }
 
-    public Integer getMinBarLength() {
+    Integer getMinBarLength() {
         return minBarLength;
     }
 
-    public Integer getOrder() {
+    Integer getOrder() {
         return order;
     }
 

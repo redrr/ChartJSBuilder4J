@@ -1,8 +1,22 @@
-package common;
+package builders.common;
 
 public class Constants {
 
     //public static final String aaa = "";
+
+    //region [Region] JsonString elements
+
+    public static final String stringEscape = "\"";
+    public static final String objectKeySeparator = ":";
+    public static final String objectSeparator = ",";
+    public static final String startJsonObject = "{";
+    public static final String endJsonObject = "}";
+    public static final String emptyJsonObject = "{}";
+    public static final String startJsonArray = "[";
+    public static final String endJsonArray = "]";
+    public static final String emptyJsonArray = "[]";
+
+    //endregion
 
     public static final String type = "type";
     public static final String labels = "labels";

@@ -1,7 +1,7 @@
-package elements.datasets;
+package builders;
 
-import common.enums.CubicInterpolationMode;
-import common.enums.Stepped;
+import builders.common.enums.CubicInterpolationMode;
+import builders.common.enums.Stepped;
 
 public class LineDataSet extends LineTypeDataSet {
 
@@ -31,19 +31,19 @@ public class LineDataSet extends LineTypeDataSet {
 
     //region [Region] Getters
 
-    public String getxAxisID() {
+    String getxAxisID() {
         return xAxisID;
     }
 
-    public String getyAxisID() {
+    String getyAxisID() {
         return yAxisID;
     }
 
-    public CubicInterpolationMode getCubicInterpolationMode() {
+    CubicInterpolationMode getCubicInterpolationMode() {
         return cubicInterpolationMode;
     }
 
-    public Stepped getStepped() {
+    Stepped getStepped() {
         return stepped;
     }
 

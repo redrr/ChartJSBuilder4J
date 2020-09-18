@@ -1,12 +1,7 @@
 package builders;
 
-import common.Constants;
-import common.enums.ChartType;
-import common.parser.JsonArray;
-import common.parser.JsonObject;
-import elements.basic.Data;
-import elements.datasets.DoughnutAndPieDataSet;
-import elements.datasets.PolarAreaDataSet;
+import builders.common.Constants;
+import builders.common.enums.ChartType;
 
 import java.util.Arrays;
 

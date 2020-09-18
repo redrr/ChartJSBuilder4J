@@ -1,6 +1,6 @@
-package elements.datasets;
+package builders;
 
-import common.enums.BorderAlign;
+import builders.common.enums.BorderAlign;
 
 public abstract class AreaTypeDataSet extends DataSet {
 
@@ -16,10 +16,9 @@ public abstract class AreaTypeDataSet extends DataSet {
 
     //region [Region] Getters
 
-    public BorderAlign getBorderAlign() {
+    BorderAlign getBorderAlign() {
         return borderAlign;
     }
-
 
     //endregion
 }
