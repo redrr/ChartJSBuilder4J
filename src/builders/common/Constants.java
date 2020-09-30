@@ -110,4 +110,16 @@ public class Constants {
     public static final String weight = "weight";
 
     //endregion
+
+    //region [Region] Option params
+
+    public static final String animation = "animation";
+    public static final String debug = "debug";
+    public static final String delay = "delay";
+    public static final String duration = "duration";
+    public static final String easing = "easing";
+    public static final String loop = "loop";
+    public static final String mode = "mode";
+
+    //endregion
 }

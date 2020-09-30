@@ -73,7 +73,19 @@ public class LineChartBuilder extends ChartBuilder {
         });
         dataObject.put(Constants.datasets, dataSets);
         JsonObject optionObject = new JsonObject();
-        //TODO: Options implementation
+
+        JsonObject animationObject = new JsonObject();
+        Animation animation = getOptions().getAnimation();
+        animationObject.put(Constants.debug, animation.getDebug());
+        animationObject.put(Constants.delay, animation.getDelay());
+        animationObject.put(Constants.duration, animation.getDuration());
+        animationObject.put(Constants.easing, animation.getEasing());
+        animationObject.put(Constants.loop, animation.getLoop());
+        animationObject.put(Constants.mode, animation.getMode());
+        optionObject.put(Constants.animation, animationObject);
+
+        Layout layout = getOptions().getLayout();
+
         config.put(Constants.type, getType().name())
                 .put(Constants.data, dataObject);
         if(Objects.nonNull(optionObject))
