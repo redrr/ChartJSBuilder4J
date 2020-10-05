@@ -24,10 +24,10 @@ class JsonObject {
 
     String convertJsonString() {
         object.forEach((key, value) -> {
-            if(value instanceof String)
+            if(value instanceof String || value instanceof Enum)
                 this.jsonStringBuilder
                         .append(Constants.stringEscape).append(key).append(Constants.stringEscape).append(Constants.objectKeySeparator)
-                        .append(Constants.stringEscape).append(value).append(Constants.stringEscape).append(Constants.objectSeparator);
+                        .append(Constants.stringEscape).append(value instanceof Enum ? ((Enum) value).name() : value).append(Constants.stringEscape).append(Constants.objectSeparator);
             if(value instanceof Boolean || value instanceof Integer)
                 this.jsonStringBuilder
                         .append(Constants.stringEscape).append(key).append(Constants.stringEscape).append(Constants.objectKeySeparator)

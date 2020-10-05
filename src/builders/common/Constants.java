@@ -114,6 +114,7 @@ public class Constants {
     //region [Region] Option params
 
     public static final String animation = "animation";
+    public static final String tension = "tension";
     public static final String debug = "debug";
     public static final String delay = "delay";
     public static final String duration = "duration";

@@ -4,6 +4,7 @@ import builders.common.Constants;
 import builders.common.enums.ChartType;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class RadarChartBuilder extends ChartBuilder {
 
@@ -17,20 +18,24 @@ public class RadarChartBuilder extends ChartBuilder {
         this.data = data;
     }
 
+    public void setOption(Options option) {
+        this.setOptions(option);
+    }
+
     @Override
     public String build() {
         JsonObject config = new JsonObject();
         JsonObject dataObject = new JsonObject();
         JsonArray labels = new JsonArray();
         data.getLabels().forEach(labels::put);
-        dataObject.put(Constants.labels, labels.toString());
+        dataObject.put(Constants.labels, labels);
         JsonArray dataSets = new JsonArray();
         data.getDatasets().forEach(lineDataSet -> {
             JsonObject dataSet = new JsonObject();
             if(lineDataSet.getData().length > 0) {
                 JsonArray data = new JsonArray();
                 Arrays.asList(lineDataSet.getData()).forEach(data::put);
-                dataSet.put(Constants.data, data.toString());
+                dataSet.put(Constants.data, data);
             }
             dataSet.put(Constants.backgroundColor, lineDataSet.getBackgroundColor())
                     .put(Constants.borderColor, lineDataSet.getHoverBackgroundColor())
@@ -62,13 +67,31 @@ public class RadarChartBuilder extends ChartBuilder {
                     .put(Constants.pointBorderColor, lineDataSet.getPointBorderColor())
                     .put(Constants.pointHoverBackgroundColor, lineDataSet.getPointHoverBackgroundColor())
                     .put(Constants.pointHoverBorderColor, lineDataSet.getPointHoverBorderColor());
-            dataSets.put(dataSet);
+            dataSets.put(dataSet.convertJsonString());
         });
+        dataObject.put(Constants.datasets, dataSets);
         JsonObject optionObject = new JsonObject();
-        //TODO: Options implementation
+
+        JsonObject animationObject = new JsonObject();
+        if(Objects.nonNull(getOptions())){
+            Animation animation = getOptions().getAnimation();
+            if(Objects.nonNull(animation)){
+                JsonObject tensionObject = new JsonObject();
+                animationObject.put(Constants.debug, animation.getDebug());
+                animationObject.put(Constants.delay, animation.getDelay());
+                animationObject.put(Constants.duration, animation.getDuration());
+                animationObject.put(Constants.easing, animation.getEasing());
+                animationObject.put(Constants.loop, animation.getLoop());
+                animationObject.put(Constants.mode, animation.getMode());
+                optionObject.put(Constants.animation, animationObject);
+            }
+            Layout layout = getOptions().getLayout();
+        }
+
         config.put(Constants.type, getType().name())
-                .put(Constants.data, dataObject)
-                .put(Constants.options, optionObject);
-        return config.toString();
+                .put(Constants.data, dataObject);
+        if(Objects.nonNull(optionObject))
+            config.put(Constants.options, optionObject);
+        return config.convertJsonString();
     }
 }
